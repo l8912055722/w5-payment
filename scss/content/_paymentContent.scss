@@ -1,0 +1,95 @@
+.content{
+    max-width: 940px;
+	height: 460px;
+    display: flex;
+    margin-bottom: 60px;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: rebeccapurple;
+	background: url(https://images.unsplash.com/photo-1505935428862-770b6f24f629?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2c5a2cf31c693f5c15fb08135bf1adf2&auto=format&fit=crop&w=800&q=60) no-repeat;
+	background-size: cover;;
+	background-position: 0 -80px;
+    .check{
+        width: 190px;
+        position: relative;
+        margin-bottom: 51px;
+        border-top: 1px solid $primary-color;
+        & ul{
+            display: flex;
+            justify-content: space-between;
+            width: 190px;
+            position: absolute;
+            top: -10px;
+        }
+        .pay-img{
+            margin-top: 30px;
+        }
+    }
+    .pay-btn{
+        width: 300px;
+        border: none;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        background: $secondary-color;
+        color: $primary-color;
+        transition: .4s;
+        font-size: 1.5rem;
+        font-weight: bold;
+        cursor: pointer;
+        &:hover{
+            background: $primary-color;
+            color:$secondary-color;
+        }
+    }
+}
+.pay-btn-mob{
+    display: none;
+    width: 300px;
+    border: none;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    background: $secondary-color;
+    color: $primary-color;
+    transition: .4s;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover{
+        background: $primary-color;
+        color:$secondary-color;
+    }
+}
+
+/* -----------------------響應式----------------------- */
+
+@include pad(){
+    .content{
+        height: 343px;
+        margin-bottom: 0;
+    }   
+    .pay-btn{
+        display: none;
+    }
+    .pay-btn-mob{
+        display: block;
+        width: 100%;
+    }
+} 
+@include mobile(){
+    .content{
+        height: 518px;
+        margin-bottom: 0;
+        background-position: -200px 0;
+        .check{
+            margin-bottom: 0;
+        }
+    }
+    .pay-btn{
+        display: none;
+    }
+    .pay-btn-mob{
+        display: block;
+        width: 100%;
+    }
+}      
